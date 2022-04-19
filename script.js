@@ -15,6 +15,7 @@ let  countdown_started = false
 btn_start.addEventListener("click", function(){
     if(!countdown_started){
         startCountdown()
+        p.style.display = "block"
     }
 })
 
@@ -27,6 +28,7 @@ btn.addEventListener("click", function(){
 
 function startCountdown(){
     document.querySelector('#btn').disabled = false;
+    btn_start.style.display = "none"
     let interval = setInterval(function(){
         if(time_left > 0){
             time_left -= 1
@@ -44,19 +46,29 @@ function countdownEnded(){
     document.querySelector('#btn').disabled = true;
     new_score.textContent = "score = " + score
     arry.push(score)
+    if(score > localStorage.getItem("highscore")){
+        localStorage.setItem("highscore", score)
+        highscore.textContent = "Highscore = " + localStorage.getItem("highscore")
+    }
+    else{
+        highscore.textContent = "Highscore = " + localStorage.getItem("highscore")
+    }
     score = 0
     time_left = 3
     p.textContent = time_left
+    p.style.display = "none"
+    btn_start.style.display = "block"
     btn.textContent = score
     countdown_started = false
     number_of_tries.textContent ="Number of tries = " + Math.max(arry.length)
-    let largest = 0
-    for (var i = 0; i < arry.length; i++) {
-        if (largest < arry[i] ) {
-            largest = arry[i];
-        }
-    }
-    highscore.textContent = "Highscore = " + largest
+    // let largest = 0
+    // for (var i = 0; i < arry.length; i++) {
+    //     if (largest < arry[i] ) {
+    //         largest = arry[i];
+    //     }
+    // }
+    
+    
 }
 
 
