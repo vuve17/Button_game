@@ -61,21 +61,24 @@ function countdownEnded(){
     btn.textContent = score
     countdown_started = false
     number_of_tries.textContent ="Number of tries = " + Math.max(arry.length)
-    // let largest = 0
-    // for (var i = 0; i < arry.length; i++) {
-    //     if (largest < arry[i] ) {
-    //         largest = arry[i];
-    //     }
-    // }
     
     
 }
-
 
 function incrementScore(){
     score ++
     btn.textContent = score
 }
+
+
+
+
+
+
+
+
+
+
 
 // var div = document.getElementById("div")
 // let width = 100

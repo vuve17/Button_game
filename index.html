@@ -9,7 +9,7 @@
         body{
             display: flex;
             justify-content: center;
-            
+            margin: 5vw;
         }
         #btn{
             display: flex;
@@ -23,34 +23,34 @@
         #p{
             display: none;
         }
-        /* #div{
-            border: 1px solid black;
-            width: 0px;
-            height: 0px;
-            border-radius: 50%;
+        #container_div{
+            display: flex;
+            border: solid 2px black;
+            background: rgb(20, 20, 100);
+            width: 400px;
+            height:400px;
+            position: fixed;
+            top: 50px;
+        }
+        #score_div
+        {
             position: absolute;
-            color: transparent;
-            /* display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 100px; 
-            top: 25px;
-        }*/
+            right: 5vw;
+        }
     </style>
 </head>
 <body>
-    <div>
-        <button id="btn" disabled > 0</button>
-        <p id="p" ></p>
-        <button id="btn_start"  > Start</button>
-        <!-- <div id="div"></div> -->
+    <div id="container_div">
+        <button id="btn" disabled >0</button>
     </div>
     <div>
+        
+    </div>
+    <div id="score_div">
+        <p id="p" ></p>
+        <button id="btn_start"  > Start</button>
         <p id="highscore"></p>
-         <br>
         <p id="new_score"></p>
-        <br>
         <p id="number_of_tries"></p>
     </div>
 
