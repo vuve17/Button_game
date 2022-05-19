@@ -75,25 +75,3 @@ function incrementScore(){
 
 
 
-
-
-
-
-
-// var div = document.getElementById("div")
-// let width = 100
-// let height = 100
-
-// divInterval = setInterval(function(){
-    
-//     div.style.width = width + "px"
-//     div.style.height = height + "px"
-//     width -= 2
-//     height -= 2
-//     console.log(div.style.width)
-// }, 100)
-
-// div.addEventListener("click", function(){
-//     width += 5
-//     height += 5
-// })
