@@ -1,0 +1,21 @@
+1.
+btn start ide u div_blue_box
+
+2. 
+odbrojanvanje da bude u gornjem desnom kutu plavog kvadrata
+
+3. 
+teleportiranje btna u boxu
+
+3.1
+Paziti na rubove 
+
+3.2
+Paziti na kursor
+
+3.3
+na svaki klik - smaniti veličinu btna za x pixela
++ da nebude gumb premal
+
+4. 
+ako se klikne na container -  oduzimaju se bodovi

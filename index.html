@@ -12,47 +12,59 @@
             margin: 5vw;
         }
         #btn{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute;
             width: 100px;
             height: 100px;
-            margin: 20px;
             z-index: 5;
+            min-width: 30px;
+            min-height: 30px;
         }
         #p{
             display: none;
         }
         #container_div{
-            display: flex;
             border: solid 2px black;
+            position: relative;
             background: rgb(20, 20, 100);
             width: 400px;
-            height:400px;
-            position: fixed;
+            height: 400px;
             top: 50px;
+        }
+        #btn_start{
+            display: flex;
+            height: 25px;
+            width: 50px;
+            align-items: center;
+            justify-content: center;
         }
         #score_div
         {
             position: absolute;
-            right: 5vw;
+            z-index: 3;
+            right: 2vw;
+            color: black;
+            top : 10px;
+            font-size: 18px;
+            font-family: Roboto;
+            align-items: flex-end;
         }
     </style>
 </head>
 <body>
-    <div id="container_div">
+    <div id="container_div" >
         <button id="btn" disabled >0</button>
-    </div>
-    <div>
         
     </div>
-    <div id="score_div">
-        <p id="p" ></p>
-        <button id="btn_start"  > Start</button>
-        <p id="highscore"></p>
-        <p id="new_score"></p>
-        <p id="number_of_tries"></p>
+    <div>
+        <div id="score_div">
+            <p id="p" ></p>
+            <button id="btn_start"  > Start</button>
+            <p id="highscore"></p>
+            <p id="new_score"></p>
+            <p id="number_of_tries"></p>
+        </div>
     </div>
+    
 
     <script src="script.js"></script>
 </body>
