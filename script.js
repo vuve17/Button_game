@@ -8,10 +8,7 @@ const container_div = document.getElementById("container_div")
 
 
 
-console.log(document.getElementById("btn").offsetHeight)
-
-
-var highscore_arry = []
+let highscore_arry = []
 let time_left = 10
 p.textContent = time_left
 let score = 0
@@ -35,14 +32,12 @@ container_div.addEventListener("click", function(event)
             if(event.target.id == "btn")
             {
                 incrementScore()
-                Teleportation()
-                decreaseBtn()
+                teleportation()
+                btnSizeDecresing()
             }
             else
             {
-                Teleportation()
-                decreaseBtn()
-                decrementBtn()
+                decrementBtnScore()
             }
             
         } 
@@ -52,7 +47,7 @@ container_div.addEventListener("click", function(event)
 
 function startCountdown()
 {
-    document.querySelector('#btn').disabled = false;
+    btn.disabled = false;
     btn_start.style.display = "none"
     let interval = setInterval(function(){
         if(time_left > 0){
@@ -72,7 +67,7 @@ function countdownEnded()
 {
     btn.style.height = "100px"
     btn.style.width = "100px"
-    document.querySelector('#btn').disabled = true;
+    btn.disabled = true;
     btn.style.top = 0
     btn.style.left = 0
     new_score.textContent = "score = " + score
@@ -93,7 +88,6 @@ function countdownEnded()
     countdown_started = false
     number_of_tries.textContent ="Number of tries = " + Math.max(highscore_arry.length)
     
-    
 }
 
 function incrementScore()
@@ -102,17 +96,24 @@ function incrementScore()
     btn.textContent = score
 }
 
-function decrementBtn()
+function decrementBtnScore()
 {   
-    if(countdown_started)
+    if(score > 0)
     {
+        container_div.style.backgroundColor = "red"
         score --
         btn.textContent = score
+        setInterval(function(){
+            container_div.style.backgroundColor = "rgb(20, 20, 100)"
+        }, 100)
+        
     } 
+
+
 }
 
 
-function Teleportation(){
+function teleportation(){
     if(countdown_started == true)
     {
         let container_div_width = parseInt(container_div.offsetWidth, 10);
@@ -127,7 +128,7 @@ function Teleportation(){
 }
 
 
-function decreaseBtn()
+function btnSizeDecresing()
 {
     let btn_width = btn.offsetWidth
     let btn_heigth = btn.offsetHeight
