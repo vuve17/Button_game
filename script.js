@@ -13,6 +13,7 @@ let time_left = 10
 p.textContent = time_left
 let score = 0
 let  countdown_started = false
+p.visibility = "hidden"
 
 
 
@@ -20,7 +21,7 @@ btn_start.addEventListener("click", function()
 {
     if(!countdown_started){
         startCountdown()
-        p.style.display = "block"
+        p.style.visibility = "visible"
     }
 })
 
@@ -38,6 +39,8 @@ container_div.addEventListener("click", function(event)
             else
             {
                 decrementBtnScore()
+                container_div.style.backgroundColor = "red"
+                setTimeout(containerDivBgColorChange, 100)
             }
             
         } 
@@ -82,7 +85,7 @@ function countdownEnded()
     score = 0
     time_left = 10
     p.textContent = time_left
-    p.style.display = "none"
+    p.style.visibility = "hidden"
     btn_start.style.display = "block"
     btn.textContent = score
     countdown_started = false
@@ -100,24 +103,24 @@ function decrementBtnScore()
 {   
     if(score > 0)
     {
-        container_div.style.backgroundColor = "red"
         score --
-        btn.textContent = score
-        setInterval(function(){
-            container_div.style.backgroundColor = "rgb(20, 20, 100)"
-        }, 100)
-        
+        btn.textContent = score  
     } 
+}
 
-
+function containerDivBgColorChange()
+{
+    console.log(container_div)
+    container_div.style.backgroundColor = "rgb(20, 20, 100)"
+    
 }
 
 
 function teleportation(){
     if(countdown_started == true)
     {
-        let container_div_width = parseInt(container_div.offsetWidth, 10);
-        let container_div_height = parseInt(container_div.offsetHeight, 10);
+        let container_div_width = container_div.offsetWidth
+        let container_div_height = container_div.offsetHeight
 
         x = Math.floor(Math.random() * (container_div_width - btn.offsetWidth )) + "px"
         y = Math.floor(Math.random() * (container_div_height - btn.offsetHeight)) + "px"
